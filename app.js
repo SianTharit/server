@@ -10,8 +10,8 @@ const authRouter = require("./routes/authRoute");
 const userRouter = require("./routes/userRoute");
 const productRouter = require("./routes/productRoute");
 const cartRouter = require("./routes/cartRoute");
+const orderRouter = require("./routes/orderRoute");
 const omiseRouter = require("./routes/omiseRoute");
-
 // MIDDLEWARE CHECK TOKEN
 const authenticate = require("./middlewares/authenticate");
 // MIDDLEWARE ERR
@@ -45,6 +45,7 @@ app.use("/auth", authRouter);
 app.use("/users", authenticate, userRouter);
 app.use("/products", productRouter);
 app.use("/carts", authenticate, cartRouter);
+app.use("/orders", authenticate, orderRouter);
 app.use(omiseRouter);
 
 // ERROR HANDLING

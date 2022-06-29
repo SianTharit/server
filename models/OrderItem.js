@@ -16,10 +16,10 @@ module.exports = (sequelize, DataTypes) => {
    );
 
    OrderItem.associate = (models) => {
-      OrderItem.belongsTo(models.User, {
+      OrderItem.belongsTo(models.Product, {
          foreignKey: {
             allowNull: false,
-            name: "userId",
+            name: "productId",
          },
          onUpdate: "RESTRICT",
          onDelete: "RESTRICT",
